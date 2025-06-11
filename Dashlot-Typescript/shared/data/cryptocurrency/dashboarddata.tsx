@@ -383,8 +383,8 @@ const Data1: any = {
   datasets: [{
     data: [85, 68, 78, 54, 67, 48, 79, 60, 80, 90, 0],
     label: 'Bitcon',
-    backgroundColor: 'rgba(74, 119, 240, 0.2)',
-    borderColor: '#4a77f0',
+    backgroundColor: 'rgba(74, 118, 240, 0.35)',
+    borderColor: '#263147',
     borderWidth: '2',
     pointBorderColor: 'transparent',
     pointBackgroundColor: 'transparent',

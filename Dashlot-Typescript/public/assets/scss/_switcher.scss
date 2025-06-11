@@ -656,7 +656,7 @@
 //menu-dark start
 [data-menu-styles="dark"] {
   --menu-bg: #{var(--custom-white)};
-  --menu-prime-color: #dde5ed;
+  --menu-prime-color: #4c345e;
   --menu-border-color: rgba(255, 255, 255, 0.1);
 
   .app-sidebar {
@@ -810,7 +810,7 @@
   }
 
   &[data-theme-mode="light"] {
-    --menu-bg: #1b2430;
+    --menu-bg: #eeeaf1;
   }
 }
 
@@ -1395,7 +1395,7 @@
 [data-header-styles="dark"] {
   --header-bg: #{var(--custom-white)};
   --header-border-color: rgba(255, 255, 255, 0.1);
-  --header-prime-color: #dde5ed;
+  --header-prime-color: #4c345e;
 
 
   &[data-nav-layout="horizontal"] {
@@ -2059,7 +2059,7 @@
 
 [data-nav-layout="horizontal"][data-theme-mode="dark"][data-menu-styles="light"]{
   .main-menu-container .slide-right,.slide-left {
-    background: #dde5ed !important;
+    background: #4c345e !important;
   }
 }
 

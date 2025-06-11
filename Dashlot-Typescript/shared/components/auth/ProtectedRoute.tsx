@@ -13,7 +13,7 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   useEffect(() => {
     // Si no está cargando y no está autenticado, redirigir al login
     if (!isLoading && !isAuthenticated) {
-      router.push('/');
+     // router.push('/');
     }
   }, [isAuthenticated, isLoading, router]);
 

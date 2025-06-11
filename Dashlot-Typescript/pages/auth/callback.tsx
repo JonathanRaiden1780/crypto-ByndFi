@@ -12,7 +12,7 @@ const AuthCallback = () => {
     localStorage.setItem("user", JSON.stringify({ username: "admin" }));
     
     // Establecer cookie para el middleware
-    document.cookie = "isAuthenticated=true; path=/";
+    //document.cookie = "isAuthenticated=true; path=/";
     
     // Redirigir al dashboard
     router.push('/components/marketmaker/dashboard/');

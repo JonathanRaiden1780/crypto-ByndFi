@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
 import { Button, Card, Col, Collapse, Dropdown, Form, InputGroup, Modal, Nav, Row, Tab } from 'react-bootstrap';
 import dynamic from 'next/dynamic';
-const Select = dynamic(() => import("react-select"), { ssr: false });import { Chartjspolar, Dash1, Dash2, Min2, Minichart3, Minichart4, StackedColumn, Trending, dashoptions, dashoptions2 } from '../../../shared/data/cryptocurrency/dashboarddata';
+const Select = dynamic(() => import("react-select"), { ssr: false });
+import { Chartjspolar, Dash1, Dash2, Min2, Minichart3, Minichart4, StackedColumn, Trending, dashoptions, dashoptions2 } from '../../../shared/data/cryptocurrency/dashboarddata';
 import SimpleBar from 'simplebar-react';
 import Pageheader from '../../../shared/layout-components/pageheader/pageheader';
 import Link from 'next/link';

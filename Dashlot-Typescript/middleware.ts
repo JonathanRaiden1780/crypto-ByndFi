@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
     
     // Si no está autenticado, redirigir al login
     if (!isAuthenticated) {
-      return NextResponse.redirect(new URL('/', request.url));
+      //return NextResponse.redirect(new URL('/', request.url));
     }
   }
   

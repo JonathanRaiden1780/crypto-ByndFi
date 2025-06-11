@@ -4,7 +4,7 @@ import Pageheader from '../../../shared/layout-components/pageheader/pageheader'
 import Seo from '@/shared/layout-components/seo/seo';
 import DataTable from 'react-data-table-component';
 
-interface FiatTransaction {
+interface BlockChain {
   id: string;
   amountSold: number;
   amountBought: number;
@@ -15,12 +15,11 @@ interface FiatTransaction {
   status: string;
 }
 
-const TransactionsPage = () => {
-  // Estados para filtros
+const BlockChainPage = () => {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [transactionId, setTransactionId] = useState('');
-  const [filteredData, setFilteredData] = useState<FiatTransaction[]>([]);
+  const [filteredData, setFilteredData] = useState<BlockChain[]>([]);
   // Datos de ejemplo (en producción vendrían de una API)
   const transactionsData = [
     {
@@ -87,7 +86,7 @@ const TransactionsPage = () => {
           <Col xl={12}>
             <Card className="custom-card">
               <Card.Header>
-                <Card.Title>Transacciones <br /> <br /> Filtros de Búsqueda</Card.Title>
+                <Card.Title>Transacciones BlockChain<br /> <br /> Filtros de Búsqueda</Card.Title>
               </Card.Header>
               <Card.Body>
                 <Row className="row-sm">
@@ -140,7 +139,9 @@ const TransactionsPage = () => {
                   size="sm"
                   onClick={exportToCSV}
                 >
-                  Exportar <i className="bi bi-filetype-csv"></i>                </Button>
+                  Exportar <i className="bi bi-filetype-csv"></i>
+
+                </Button>
               </Card.Header>
               <Card.Body>
                 <DataTable
@@ -161,5 +162,5 @@ const TransactionsPage = () => {
   );
 };
 
-TransactionsPage.layout = "Contentlayout";
-export default TransactionsPage;
+BlockChainPage.layout = "Contentlayout";
+export default BlockChainPage;

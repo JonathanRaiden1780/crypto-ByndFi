@@ -11,32 +11,31 @@ const Draggablecards = () => {
 	const windowElement = typeof window !== "undefined" ? window : null;
 
 	useEffect(() => {
-        // Check if window is defined (to prevent issues during server-side rendering)
-        if (typeof window !== "undefined") {
-            // Import the dragula library here (make sure it's installed first)
-            const dragula = require("dragula");
-            const windowElement = window;
+		// Check if window is defined (to prevent issues during server-side rendering)
+		if (typeof window !== "undefined") {
+			// Import the dragula library here (make sure it's installed first)
+			const dragula = require("dragula");
+			const windowElement = window;
 
-            if (leftContainerRef.current && rightContainerRef.current) {
-                const containers = [
-                    leftContainerRef.current,
-                    rightContainerRef.current,
-                ];
+			if (leftContainerRef.current && rightContainerRef.current) {
+				const containers = [
+					leftContainerRef.current,
+					rightContainerRef.current,
+				];
 
-                // Initialize dragula on the containers
-                const drake = dragula(containers);
+				// Initialize dragula on the containers
+				const drake = dragula(containers);
 
-                // Your other dragula-related logic here...
+				// Your other dragula-related logic here...
 
-                if (document.querySelector(".firstdrag")?.classList.contains("task-Null")) {
-                    console.log("aaa");
-                    document.querySelector(".view-more-button")?.classList.add("d-none");
-                }
-            }
+				if (document.querySelector(".firstdrag")?.classList.contains("task-Null")) {
+					document.querySelector(".view-more-button")?.classList.add("d-none");
+				}
+			}
 
-            OnDivChange();
-        }
-    }, []);
+			OnDivChange();
+		}
+	}, []);
 
 	// Card With Collapse Button
 	const [BasicExpanded, setBasicExpanded] = useState(true);
@@ -53,26 +52,26 @@ const Draggablecards = () => {
 
 	const fullscreenmodalClose = () => setfullscreenShow(false);
 
-	function handleShow(breakpoint:any) {
+	function handleShow(breakpoint: any) {
 		setFullscreen(breakpoint);
 		setfullscreenShow(true);
 	}
 	const elementsToModify = [
-        leftContainerRef,
-        rightContainerRef,
-    ];
+		leftContainerRef,
+		rightContainerRef,
+	];
 	const OnDivChange = () => {
-        elementsToModify.forEach((elementId:any) => {
-            const element:any = elementId.current;
-            if (element?.children.length <= 0) {
-                element?.classList.add("task-Null");
-                element?.parentNode.parentElement.parentElement.querySelector(".view-more-button")?.classList.add("d-none");
-            } else {
-                element?.classList.remove("task-Null");
-                element?.parentNode.parentElement.parentElement.querySelector(".view-more-button")?.classList.remove("d-none");
-            }
-        });
-    };
+		elementsToModify.forEach((elementId: any) => {
+			const element: any = elementId.current;
+			if (element?.children.length <= 0) {
+				element?.classList.add("task-Null");
+				element?.parentNode.parentElement.parentElement.querySelector(".view-more-button")?.classList.add("d-none");
+			} else {
+				element?.classList.remove("task-Null");
+				element?.parentNode.parentElement.parentElement.querySelector(".view-more-button")?.classList.remove("d-none");
+			}
+		});
+	};
 	return (
 		<Fragment>
 			<Seo title={"Draggablecards"} />

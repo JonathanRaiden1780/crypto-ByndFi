@@ -5,8 +5,8 @@ import Seo from '@/shared/layout-components/seo/seo';
 import DataTable from 'react-data-table-component';
 
 type PageWithLayout = FC & {
-    layout?: string;
-  };
+  layout?: string;
+};
 // Definición de la interfaz para una transacción FIAT
 interface FiatTransaction {
   id: string;
@@ -15,7 +15,10 @@ interface FiatTransaction {
   date: string;
   reference: string;
 }
-
+const exportToCSV = () => {
+  // Implementación de exportación a CSV
+  alert('Exportando a CSV...');
+};
 const FiatTransactionsPage: PageWithLayout = () => {
   // Estados para filtros
   const [startDate, setStartDate] = useState('');
@@ -71,15 +74,14 @@ const FiatTransactionsPage: PageWithLayout = () => {
 
   return (
     <>
-      <Seo title="Consulta de Transacciones FIAT" />
-      <Pageheader title="Consulta de Transacciones FIAT" heading="Market Maker" active="Transacciones FIAT" />
-
       <div className="main-container container-fluid">
         <Row>
+
+
           <Col xl={12}>
             <Card className="custom-card">
               <Card.Header>
-                <Card.Title>Filtros de Búsqueda</Card.Title>
+                <Card.Title>Transacciones FIAT <br /> <br /> Filtros de Búsqueda</Card.Title>
               </Card.Header>
               <Card.Body>
                 <Row className="row-sm">
@@ -110,18 +112,21 @@ const FiatTransactionsPage: PageWithLayout = () => {
                       onClick={searchTransactions}
                       disabled={loading}
                     >
-                      {loading ? 'Buscando...' : 'Buscar'}
+                      {loading ? 'Buscando... ' : 'Buscar '}
+                      <i hidden={loading} className='fa fa-search'></i>
+
                     </Button>
                   </Col>
                 </Row>
               </Card.Body>
-            </Card>
-          </Col>
-
-          <Col xl={12}>
-            <Card className="custom-card">
-              <Card.Header>
-                <Card.Title>Transacciones FIAT</Card.Title>
+              <Card.Header className="d-flex justify-content-between">
+                <Card.Title>Resultados</Card.Title>
+                <Button
+                  variant="success"
+                  size="sm"
+                  onClick={exportToCSV}
+                >
+                  Exportar <i className="bi bi-filetype-csv"></i>                </Button>
               </Card.Header>
               <Card.Body>
                 <DataTable
@@ -131,6 +136,7 @@ const FiatTransactionsPage: PageWithLayout = () => {
                   progressPending={loading}
                   highlightOnHover
                   responsive
+
                 />
               </Card.Body>
             </Card>
