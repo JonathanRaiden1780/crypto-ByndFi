@@ -53,7 +53,7 @@ export const MENUITEMS: any = [
     active: false,
     selected: false,
     dirchange: false,
-    children: [{ path: "/components/cryptocurrency/news", type: "link", active: false, selected: false, dirchange: false, title: "News" }],
+    children: [{ path: "/components/beyondfi/dashboard", type: "link", active: false, selected: false, dirchange: false, title: "News" }],
   },
 ];
 export interface NestedMenuItem extends menu {
